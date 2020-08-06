@@ -15,4 +15,5 @@ pipeline {
 				echo "The status code was ${output}"
 			}
 		}
+	}
 }
