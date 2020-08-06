@@ -13,8 +13,8 @@ pipeline {
 			steps {
 		        script
 		        {
-					upload_coverage('cddafa13d5fe4dbead4819e1a559c144', 'python', 'coverage.xml')
-					echo "The status code was "
+					output = upload_coverage('cddafa13d5fe4dbead4819e1a559c144', 'python', 'coverage.xml')
+					echo "The status code was ${output}"
 		        }
 			}
 		}
