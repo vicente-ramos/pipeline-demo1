@@ -11,8 +11,11 @@ pipeline {
 		}
 		stage('Pietto') {
 			steps {
-				upload_coverage('cddafa13d5fe4dbead4819e1a559c144', 'python', 'coverage.xml')
-				echo "The status code was "
+		        script
+		        {
+					upload_coverage('cddafa13d5fe4dbead4819e1a559c144', 'python', 'coverage.xml')
+					echo "The status code was "
+		        }
 			}
 		}
 	}
