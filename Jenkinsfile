@@ -1,4 +1,4 @@
-def report_file = '${WORKSPACE}/coverage.xml'
+def report_file = ${WORKSPACE} + '/coverage.xml'
 
 pipeline {
 	agent any
