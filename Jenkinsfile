@@ -1,5 +1,3 @@
-def report_file = env.WORKSPACE + '/coverage.xml'
-
 pipeline {
 	agent any
 	libraries {
@@ -14,6 +12,7 @@ pipeline {
 		stage('Demo') {
 			steps {
 				hello 'Vincent'
+				def report_file = env.WORKSPACE + '/coverage.xml'
 				echo "el reporte ${report_file}"
 			}
 		}
@@ -21,6 +20,7 @@ pipeline {
 			steps {
 		        script
 		        {
+		        	def report_file = env.WORKSPACE + '/coverage.xml'
 					//output = upload_coverage('cddafa13d5fe4dbead4819e1a559c144', 'python', 'coverage.xml')
 					output = coverage_upload_with_project('Django-Mail-Template', 'vicente-ramos', 'python', "${report_file}")
 					echo "The status code was ${output}"
