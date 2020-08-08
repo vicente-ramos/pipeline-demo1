@@ -1,4 +1,4 @@
-def report_file = WORKSPACE + '/coverage.xml'
+// def report_file = WORKSPACE + '/coverage.xml'
 
 pipeline {
 	agent any
@@ -14,7 +14,7 @@ pipeline {
 		stage('Demo') {
 			steps {
 				hello 'Vincent'
-				echo "el reporte ${report_file}"
+				echo "el reporte ${env.WORKSPACE}"
 			}
 		}
 		stage('Pietto') {
