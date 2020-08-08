@@ -19,7 +19,8 @@ pipeline {
 		        script
 		        {
 					//output = upload_coverage('cddafa13d5fe4dbead4819e1a559c144', 'python', 'coverage.xml')
-					output = coverage_upload_with_project('Django-Mail-Template', 'vicente-ramos', 'python', ${WORKSPACE}'/coverage.xml')
+					file = ${WORKSPACE} + '/coverage.xml'
+					output = coverage_upload_with_project('Django-Mail-Template', 'vicente-ramos', 'python', file)
 					echo "The status code was ${output}"
 		        }
 			}
