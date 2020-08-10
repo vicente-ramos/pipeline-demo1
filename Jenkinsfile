@@ -19,7 +19,7 @@ pipeline {
 		        script
 		        {
 					//output = upload_coverage('cddafa13d5fe4dbead4819e1a559c144', 'python', 'coverage.xml')
-					output = getAuthorEmailid()
+					output = slackUserIdFromEmail("${getAuthorEmailid()}")
 					echo "El ID segun email es " + output
 		        }
 			}
